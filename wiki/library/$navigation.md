@@ -25,3 +25,4 @@
 
 ##### git
 - [搭建git服务器](?file=06-git/01-搭建git服务器 "搭建git服务器")
+- [git常用命令](?file=06-git/02-git常用命令 "git常用命令")
