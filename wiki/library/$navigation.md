@@ -19,3 +19,6 @@
 - [udp协议](?file=04-swoole/003-udp协议 "udp协议")
 - [web协议](?file=04-swoole/004-web协议 "web协议")
 - [websocket协议](?file=04-swoole/005-websocket协议 "websocket协议")
+
+##### 常用脚本
+- [数据库备份脚本](?file=05-常用脚本/01-数据库备份脚本 "数据库备份脚本")
