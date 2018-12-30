@@ -1,3 +1,4 @@
+```php
 <?php
     $store=1000;
     $redis=new Redis();
@@ -9,3 +10,4 @@
         $redis->lpush('goods_store',1);
     }
     echo $redis->llen('goods_store');
+```

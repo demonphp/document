@@ -1,3 +1,4 @@
+```php
 <?php
 
     $url = "http://localhost/web_services.php";
@@ -17,3 +18,4 @@
 
 
     print_r($output);    //打印获得的数据
+```

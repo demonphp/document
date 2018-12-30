@@ -1,3 +1,4 @@
+```php
 <?php
     //1.初始化，创建一个新cURL资源
     $ch = curl_init();
@@ -11,5 +12,4 @@
     curl_close($ch);
 
     file_put_contents('./curl.html',$data);
-
-
+```
