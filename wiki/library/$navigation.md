@@ -16,6 +16,7 @@
 - [php扩展](?file=001-常用代码/013-php扩展 "php扩展")
 - [签名](?file=001-常用代码/014-签名 "签名")
 - [加解密](?file=001-常用代码/015-加解密 "加解密")
+- [发红包](?file=001-常用代码/016-发红包 "发红包")
 
 ##### 常用脚本
 - [数据库备份脚本](?file=001.1-常用脚本/01-数据库备份脚本 "数据库备份脚本")
@@ -92,6 +93,10 @@
 
 ##### nginx
 - [nginx所有配置](?file=040-nginx/001-nginx所有配置 "nginx所有配置")
+- [常用配置](?file=040-nginx/002-常用配置 "常用配置")
+- [nginx常用命令](?file=040-nginx/003-nginx常用命令 "nginx常用命令")
+- [用户认证](?file=040-nginx/004-用户认证 "用户认证")
+- [open_basedir限制站点目录防止跨站](?file=040-nginx/005-open_basedir限制站点目录防止跨站 "open_basedir限制站点目录防止跨站")
 
 ##### 捉包相关
 - [捉包软件](?file=041-捉包相关/001-捉包软件 "捉包软件")
@@ -117,3 +122,12 @@
 
 ##### elasticsearch
 - [入门文档](?file=056-elasticsearch/01-入门文档 "入门文档")
+
+##### oauth与jwt
+- [oauth](?file=057-oauth与jwt/001-oauth "oauth")
+
+##### jmeter
+
+##### http和https
+- [https设置](?file=059-http和https/001-https设置 "https设置")
+- [http相关](?file=059-http和https/002-http相关 "http相关")
