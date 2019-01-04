@@ -107,6 +107,7 @@
 - [udp协议](?file=051-swoole/003-udp协议 "udp协议")
 - [web协议](?file=051-swoole/004-web协议 "web协议")
 - [websocket协议](?file=051-swoole/005-websocket协议 "websocket协议")
+- [task任务](?file=051-swoole/006-task任务 "task任务")
 
 ##### phpstome
 - [安装激活](?file=052-phpstome/01-安装激活 "安装激活")
