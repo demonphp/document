@@ -137,3 +137,6 @@
 ##### http和https
 - [https设置](?file=059-http和https/001-https设置 "https设置")
 - [http相关](?file=059-http和https/002-http相关 "http相关")
+
+##### 算法
+- [算法](?file=060-算法/001-算法 "算法")
