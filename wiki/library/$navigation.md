@@ -111,7 +111,7 @@
 - [定时器](?file=051-swoole/007-定时器 "定时器")
 - [异步](?file=051-swoole/008-异步 "异步")
 - [进程](?file=051-swoole/009-进程 "进程")
-- [swoole_table](?file=051-swoole/010-swoole_table "swoole_table")
+- [内存](?file=051-swoole/010-内存 "内存")
 - [协程](?file=051-swoole/011-协程 "协程")
 
 ##### phpstome
