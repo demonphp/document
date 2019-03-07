@@ -109,10 +109,12 @@
 - [websocket协议](?file=051-swoole/005-websocket协议 "websocket协议")
 - [task任务](?file=051-swoole/006-task任务 "task任务")
 - [定时器](?file=051-swoole/007-定时器 "定时器")
-- [异步](?file=051-swoole/008-异步 "异步")
-- [进程](?file=051-swoole/009-进程 "进程")
-- [内存](?file=051-swoole/010-内存 "内存")
-- [协程](?file=051-swoole/011-协程 "协程")
+- [异步文件io](?file=051-swoole/008-异步文件io "异步文件io")
+- [异步mysql](?file=051-swoole/009-异步mysql "异步mysql")
+- [异步redis](?file=051-swoole/010-异步redis "异步redis")
+- [进程](?file=051-swoole/011-进程 "进程")
+- [内存](?file=051-swoole/012-内存 "内存")
+- [协程](?file=051-swoole/013-协程 "协程")
 
 ##### phpstome
 - [安装激活](?file=052-phpstome/01-安装激活 "安装激活")
