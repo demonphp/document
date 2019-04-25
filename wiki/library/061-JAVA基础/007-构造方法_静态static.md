@@ -1,4 +1,4 @@
-###07.01_面向对象(构造方法Constructor概述和格式)(掌握)
+### 面向对象(构造方法Constructor概述和格式)(掌握)
 * A:构造方法概述和作用
 	* 给对象的数据(属性)进行初始化
 * B:构造方法格式特点
@@ -6,7 +6,7 @@
 	* b:没有返回值类型，连void都没有
 	* c:没有具体的返回值return;
 
-###07.02_面向对象(构造方法的重载及注意事项)(掌握)
+### 面向对象(构造方法的重载及注意事项)(掌握)
 * A:案例演示
 	* 构造方法的重载
 	* 重载:方法名相同,与返回值类型无关(构造方法没有返回值),只看参数列表
@@ -15,13 +15,51 @@
 	* b:如果我们给出了构造方法，系统将不再提供默认的无参构造方法。
 		* 注意：这个时候，如果我们还想使用无参构造方法，就必须自己给出。建议永远自己给出无参构造方法
 
-###07.03_面向对象(给成员变量赋值的两种方式的区别)
+```java
+class Demo2_Person {
+	public static void main(String[] args) {
+		Person p1 = new Person();
+		p1.show();
+
+		System.out.println("---------------------");
+
+		Person p2 = new Person("张三",23);
+		p2.show();
+
+		System.out.println("---------------------");
+
+		Person p3 = new Person("李四",24);
+		p3.show();
+	}
+}
+
+class Person {
+	private String name;			//姓名
+	private int age;				//年龄
+
+	public Person() {				//空参构造
+		System.out.println("空参的构造");
+	}
+
+	public Person(String name,int age) {
+		this.name = name;
+		this.age = age;
+		System.out.println("有参的构造");
+	}
+
+	public void show() {
+		System.out.println(name + "..." + age);
+	}
+}
+```
+
+### 面向对象(给成员变量赋值的两种方式的区别)
 * A:setXxx()方法
 	* 修改属性值
 * B:构造方法
 	* 给对象中属性进行初始化
 
-###07.04_面向对象(学生类的代码及测试)(掌握)
+### 面向对象(学生类的代码及测试)(掌握)
 * A:案例演示
 	* 学生类：
 		* 成员变量：
@@ -39,11 +77,57 @@
 	* a:通过getXxx()分别获取然后拼接
 	* b:通过调用show()方法搞定
 
-###07.05_面向对象(手机类的代码及测试)(掌握)
-* A:案例演示
-	* 模仿学生类，完成手机类代码
+```java
+class Demo4_Student {
+	public static void main(String[] args) {
+		Student s1 = new Student();					//使用空参构造
+		s1.setName("张三");							//设置姓名
+		s1.setAge(23);								//设置年龄
 
-###07.06_面向对象(创建一个对象的步骤)(掌握)
+		System.out.println("我的姓名是:" + s1.getName() + ",我的年龄是:" + s1.getAge());
+		//getXxx()获取属性值,可以打印,也可以赋值给其他的变量,做其他的操作
+		Student s2 = new Student("李四",24);
+		s2.show();									//只是为了显示属性值
+	}
+}
+
+class Student {
+	private String name;							//姓名
+	private int age;								//年龄
+
+	public Student(){}								//空参构造
+
+	public Student(String name,int age) {			//有参构造
+		//赋值
+		this.name = name;
+		this.age = age;
+	}
+
+	public void setName(String name) {				//设置姓名
+		this.name = name;
+	}
+
+	public String getName() {						//获取姓名
+		return name;
+	}
+
+	public void setAge(int age) {					//设置年龄
+		this.age = age;
+	}
+
+	public int getAge() {							//获取年龄
+		return age;
+	}
+
+	public void show() {
+		System.out.println("我的姓名是:" + name +  ",我的年龄是:" +  age);
+	}
+}
+```
+
+
+
+### 面向对象(创建一个对象的步骤)(掌握)
 * A:画图演示
 	* 画图说明一个对象的创建过程做了哪些事情?
 	* Student s = new Student();
@@ -55,13 +139,48 @@
 	* 6,构造方法进栈,对对象中的属性赋值,构造方法弹栈
 	* 7,将对象的地址值赋值给s
 
-###07.07_面向对象(长方形案例练习)(掌握)
+### 面向对象(长方形案例练习)(掌握)
 * A:案例演示
 	* 需求：
 		* 定义一个长方形类,定义 求周长和面积的方法，
 		* 然后定义一个测试类进行测试。
 
-###07.08_面向对象(员工类案例练习)(掌握)
+```java
+public class Test4
+{
+	public static void main(String args[]) {
+		Changefangying t1 = new Changefangying(5,6);
+		System.out.println(t1.getMainji());
+		System.out.println(t1.getZhouchang());
+	}
+
+}
+
+class Changefangying {
+	private int chang;
+	private int kuan;
+
+
+	public Changefangying(int chang,int kuan)
+	{
+		this.chang = chang;
+		this.kuan = kuan;
+	}
+
+	public int getMainji()
+	{
+		return this.chang * this.kuan;
+	}
+
+	public int getZhouchang()
+	{
+		return  (this.chang + this.kuan) * 2;
+	}
+}
+
+```
+
+### 面向对象(员工类案例练习)(掌握)
 * A:案例演示
 	* 需求：定义一个员工类Employee
 	* 自己分析出几个成员，然后给出成员变量
@@ -72,7 +191,7 @@
 	* 以及一个显示所有成员信息的方法。并测试。
 		* work
 
-###07.09_面向对象(static关键字及内存图)(了解)
+### 面向对象(static关键字及内存图)(了解)
 * A:案例演示
 	* 通过一个案例引入static关键字。
 	* 人类：Person。每个人都有国籍，中国。
