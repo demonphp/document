@@ -191,15 +191,8 @@ class Changefangying {
 	* 以及一个显示所有成员信息的方法。并测试。
 		* work
 
-### 面向对象(static关键字及内存图)(了解)
-* A:案例演示
-	* 通过一个案例引入static关键字。
-	* 人类：Person。每个人都有国籍，中国。
 
-* B:画图演示
-	* 带有static的内存图
-
-###07.10_面向对象(static关键字的特点)(掌握)
+### 面向对象(static关键字的特点)(掌握)
 * A:static关键字的特点
 	* a:随着类的加载而加载
 	* b:优先于对象存在
@@ -219,7 +212,7 @@ class Changefangying {
 	* static关键字的特点
 
 
-###07.11_面向对象(static的注意事项)(掌握)
+### 面向对象(static的注意事项)(掌握)
 * A:static的注意事项
 	* a:在静态方法中是没有this关键字的
 		* 如何理解呢?
@@ -237,7 +230,7 @@ class Changefangying {
 * B:案例演示
 	* static的注意事项
 
-###07.12_面向对象(静态变量和成员变量的区别)(掌握)
+### 面向对象(静态变量和成员变量的区别)(掌握)
 * 静态变量也叫类变量  成员变量也叫对象变量
 * A:所属不同
 	* 静态变量属于类，所以也称为为类变量
@@ -252,7 +245,7 @@ class Changefangying {
 	* 静态变量可以通过类名调用，也可以通过对象调用
 	* 成员变量只能通过对 象名调用
 
-###07.13_面向对象(main方法的格式详细解释)(了解)
+### 面向对象(main方法的格式详细解释)(了解)
 * A:格式
 	* public static void main(String[] args) {}
 * B:针对格式的解释
@@ -264,15 +257,104 @@ class Changefangying {
 * C:演示案例
 	* 通过args接收键盘例如数据
 
-###07.14_面向对象(工具类中使用静态)(了解)
+	```java
+	public static void main(String[] args) {			
+	/*
+	public : 被jvm调用,所以权限要足够大
+	static : 被jvm调用,不需要创建对象,直接类名.调用即可
+	void   : 被jvm调用,不需要有任何的返回值
+	main   : 只有这样写才能被jvm识别,main不是关键字
+	String[] args : 以前是用来接收键盘录入的
+	*/
+
+	System.out.println(args.length);
+	for (int i = 0;i < args.length ;i++ ) {
+		System.out.println(args[i]);
+	}
+}
+[E:\javapro\com.demo\src]$ java Demo3_Main 1 2 3
+3
+1
+2
+3
+	```
+
+### 面向对象(工具类中使用静态)(掌握)
 * A:制作一个工具类
 	* ArrayTool
 	* 1,获取最大值
 	* 2,数组的遍历
 	* 3,数组的反转
 
+```java
+/**
+这是一个数组工具类,里面封装了查找数组最大值,打印数组,数组反转的方法
+@author fengjia
+@version v1.0
+*/
+public class ArrayTool {
+	//如果一个类中所有的方法都是静态的,需要再多做一步,私有构造方法,目的是不让其他类创建本类对象
+	//直接用类名.调用即可
+	/**
+	私有构造方法
+	*/
+	private ArrayTool(){} //设计模式:单例模式
 
-###07.15_面向对象(说明书的制作过程)(了解)
+	//1,获取最大值
+
+	/**
+	这是获取数组中最大值的方法
+	@param arr 接收一个int类型数组
+
+	@return 返回数组中最大值
+	*/
+	public static int getMax(int[] arr) {
+		int max = arr[0];						//记录第一个元素
+		for (int i = 1;i < arr.length ;i++ ) {	//从第二个元素开始遍历
+			if (max < arr[i]) {					//max与数组中其他的元素比较
+				max = arr[i];					//记录住较大的
+			}
+		}
+
+		return max;								//将最大值返回
+	}
+	//2,数组的遍历
+	/**
+	这是遍历数组的方法
+	@param arr 接收一个int类型数组
+	*/
+	public static void print(int[] arr) {
+		for (int i = 0;i < arr.length ;i++ ) {	//遍历数组
+			System.out.print(arr[i] + " ");
+		}
+	}
+	//3,数组的反转
+	/**
+	这是数组反转的方法
+	@param arr 接收一个int类型数组
+	*/
+	public static void revArray(int[] arr) {
+		for (int i = 0;i < arr.length / 2 ;i++ ) {	//循环次数是元素个数的一半
+			/*
+			arr[0]与arr[arr.length-1-0]	交换
+			arr[1]与arr[arr.length-1-1]	交换
+			arr[2]与arr[arr.length-1-2] 交换
+			*/
+			int temp = arr[i];
+			arr[i] = arr[arr.length-1-i];
+			arr[arr.length-1-i] = temp;
+		}
+	}
+}
+
+
+//调用
+int[] arr = {33,11,22,66,55,44};
+ArrayTool.print(arr);
+```
+
+
+### 面向对象(说明书的制作过程)(了解)
 * A:对工具类加入文档注释
 * B:通过javadoc命令生成说明书
 	* @author(提取作者内容)
@@ -280,7 +362,7 @@ class Changefangying {
 	* javadoc -d 指定的文件目录 -author -version ArrayTool.java
 	* @param 参数名称//形式参数的变量名称@return 函数运行完返回的数据
 
-###07.16_面向对象(如何使用JDK提供的帮助文档)(了解)
+### 面向对象(如何使用JDK提供的帮助文档)(了解)
 * A:找到文档，打开文档
 * B:点击显示，找到索引，出现输入框
 * C:你应该知道你找谁?举例：Scanner
@@ -289,7 +371,7 @@ class Changefangying {
 	* 构造方法	构造方法
 	* 成员方法	方法
 
-###07.17_面向对象(学习Math类的随机数功能)(了解)
+### 面向对象(学习Math类的随机数功能)(了解)
 * 打开JDK提供的帮助文档学习
 * A:Math类概述
 	* 类包含用于执行基本数学运算的方法
@@ -300,7 +382,3 @@ class Changefangying {
 	* public static double random():返回带正号的 double 值，该值大于等于 0.0 且小于 1.0。
 * D:我要获取一个1-100之间的随机数，肿么办?
 	* int number = (int)(Math.random()*100)+1;
-
-###07.18_面向对象(猜数字小游戏案例)(了解)
-* A:案例演示
-	* 需求：猜数字小游戏(数据在1-100之间)
