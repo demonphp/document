@@ -1,8 +1,8 @@
-### 11.01_Java开发工具
+### Java开发工具
 * E:下载 http://eclipse.org/
 	* org是非盈利团体
 
-### 11.02_Java开发工具(Eclipse中HelloWorld案例以及汉化)(了解)
+### Java开发工具(Eclipse中HelloWorld案例以及汉化)(了解)
 * A:选择工作空间
 	* 工作空间  其实就是我们写的源代码所在的目录
 * B:用Eclipse来完成一个HelloWorld案例
@@ -16,7 +16,7 @@
 	* 从Eclipse3.5开始，安装目录下就多了一个dropins目录,只要将插件解压后放到到该目录即可。
 	* 同理，这种方式卸载插件也是特别的方便，推荐这种方式
 
-###11.03_Java开发工具(Eclipse的视窗和视图概述)(了解)
+### Java开发工具(Eclipse的视窗和视图概述)(了解)
 * A:视窗  每一个基本的窗体被称为视窗
 	* PackageExplorer  显示项目结构，包，类，及资源
 	* Outline   显示类的结构，方便查找，识别，修改
@@ -26,7 +26,7 @@
 	* Java视图
 	* Debug视图
 
-###11.04_Java开发工具(Eclipse工作空间的基本配置)(掌握)
+### Java开发工具(Eclipse工作空间的基本配置)(掌握)
 * A:程序的编译和运行的环境配置(一般不改)
 	* window -- Preferences -- Java
 	* 编译环境：Compiler	默认选中的就是最高版本。
@@ -57,14 +57,14 @@
 	* window -- Preferences -- Java--Editor--Hovers。右边将Combined Hover勾去掉。
 	* 这样代码的悬浮框就不会自动出现了。如果想看提示，将光标悬浮在代码上，按F2即可。
 
-###11.05_Java开发工具(Eclipse中内容辅助键的使用)(掌握)
+### Java开发工具(Eclipse中内容辅助键的使用)(掌握)
 * A:Alt+/ 起提示作用
 * B:main+alt+/,syso+alt+/,给出其他提示
 * C:补充输出语句,选中需要输出的部分,alt+/选择最后一项即可
 * C:定义自己的alt + /
 	* windows--perference-Java-Editor-Templates--New
 
-###11.06_Java开发工具(Eclipse中快捷键的使用)(掌握)
+### Java开发工具(Eclipse中快捷键的使用)(掌握)
 * A:新建 ctrl + n
 * B:格式化  ctrl+shift+f
 * C:导入包  ctrl+shift+o
@@ -155,7 +155,9 @@
 	* 就是Java提供给我们使用的类，这些类将底层的实现封装了起来，
 	* 我们不需要关心这些类是如何实现的，只需要学习这些类如何使用。
 
-###11.15_常见对象(Object类的概述)(了解)
+$destPath = Config::get('system.impurity.shell_out_path');
+wash.lexicon.itword
+### 常见对象(Object类的概述)(了解)
 * A:Object类概述
 	* 类层次结构的根类
 	* 所有类都直接或者间接的继承自该类
