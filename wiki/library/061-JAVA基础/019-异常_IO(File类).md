@@ -1,4 +1,4 @@
-###19.01_异常(异常的概述和分类)
+### 异常(异常的概述和分类)
 * A:异常的概述
 	* 异常就是Java程序在运行过程中出现的错误。
 * B:异常的分类
@@ -12,7 +12,7 @@ C:异常的继承体系
 		* Exception
 			* RuntimeException
 
-###19.02_异常(JVM默认是如何处理异常的)
+### 异常(JVM默认是如何处理异常的)
 * A:JVM默认是如何处理异常的
 	* main函数收到这个问题时,有两种处理方式:
 	* a:自己将该问题处理,然后继续运行
@@ -22,7 +22,7 @@ C:异常的继承体系
 * B:案例演示
 	* JVM默认如何处理异常
 
-###19.03_异常(try...catch的方式处理异常1)
+### 异常(try...catch的方式处理异常1)
 * A:异常处理的两种方式
 	* a:try…catch…finally
 		* try catch
@@ -34,12 +34,26 @@ C:异常的继承体系
 * C:案例演示
 	* try...catch的方式处理1个异常
 
-###19.04_异常(try...catch的方式处理异常2)
+### 异常(try...catch的方式处理异常2)
 * A:案例演示
 	* try...catch的方式处理多个异常
 	* JDK7以后处理多个异常的方式及注意事项
 
-###19.05_异常(编译期异常和运行期异常的区别)
+```java
+int a = 10;
+int b = 0;
+int[] arr = {11,22,33,44,55};
+
+//JDK7如何处理多个异常
+try {
+	System.out.println(a / b);
+	System.out.println(arr[10]);
+} catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
+	System.out.println("出错了");
+}
+```
+
+### 异常(编译期异常和运行期异常的区别)
 * A:编译期异常和运行期异常的区别
 	* Java中的异常被分为两大类：编译时异常和运行时异常。
 	* 所有的RuntimeException类及其子类的实例被称为运行时异常，其他的异常就是编译时异常
@@ -51,7 +65,7 @@ C:异常的继承体系
 * B:案例演示
 	* 编译期异常和运行期异常的区别
 
-###19.06_异常(Throwable的几个常见方法)
+### 异常(Throwable的几个常见方法)
 * A:Throwable的几个常见方法
 	* a:getMessage()
 		* 获取异常信息，返回字符串。
@@ -62,14 +76,81 @@ C:异常的继承体系
 * B:案例演示
 	* Throwable的几个常见方法的基本使用
 
-###19.07_异常(throws的方式处理异常)
+```java
+try {
+	System.out.println(1/0);
+} catch (Exception e) {			//Exception e = new ArithmeticException("/ by zero");
+	System.out.println(e.getMessage());		//获取异常信息
+	System.out.println(e); 		//调用toString方法,打印异常类名和异常信息
+	e.printStackTrace();		//jvm默认就用这种方式处理异常
+}
+```
+
+### 异常(throws的方式处理异常)
 * A:throws的方式处理异常
 	* 定义功能方法时，需要把出现的问题暴露出来让调用者去处理。
 	* 那么就通过throws在方法上标识。
 * B:案例演示
 	* 举例分别演示编译时异常和运行时异常的抛出
 
-###19.08_异常(throw的概述以及和throws的区别)
+```java
+public class Demo6_Exception {
+
+	/**
+	 * * A:throws的方式处理异常
+			* 定义功能方法时，需要把出现的问题暴露出来让调用者去处理。
+			* 那么就通过throws在方法上标识。
+		* B:案例演示
+			* 举例分别演示编译时异常和运行时异常的抛出
+			* 编译时异常的抛出必须对其进行处理
+			* 运行时异常的抛出可以处理也可以不处理
+	 * @throws Exception
+	 */
+	public static void main(String[] args) throws Exception {
+		Person p = new Person();
+		p.setAge(-17);
+		System.out.println(p.getAge());
+	}
+
+}
+
+class Person {
+	private String name;
+	private int age;
+	public Person() {
+		super();
+
+	}
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) throws AgeOutOfBoundsException {
+		if(age >0 && age <= 150) {
+			this.age = age;
+		}else {
+			//Exception e = new Exception("年龄非法");
+			//throw e;
+			throw new AgeOutOfBoundsException("年龄非法");
+		}
+	}
+
+
+}
+
+```
+
+### 异常(throw的概述以及和throws的区别)
 * A:throw的概述
 	* 在功能方法内部出现某种情况，程序不能继续运行，需要进行跳转时，就用throw把异常对象抛出。
 * B:案例演示
@@ -84,7 +165,9 @@ C:异常的继承体系
 		* 只能抛出一个异常对象名
 		* 表示抛出异常，由方法体内的语句处理
 
-###19.09_异常(finally关键字的特点及作用)
+
+
+### 异常(finally关键字的特点及作用)
 * A:finally的特点
 	* 被finally控制的语句体一定会执行
 	* 特殊情况：在执行到finally之前jvm退出了(比如System.exit(0))
@@ -93,7 +176,19 @@ C:异常的继承体系
 * C:案例演示
 	* finally关键字的特点及作用
 
-###19.10_异常(finally关键字的面试题)
+```java
+try {
+	System.out.println(10/0);
+} catch (Exception e) {
+	System.out.println("除数为零了");
+	System.exit(0);								//退出jvm虚拟机
+	return;
+} finally {
+	System.out.println("看看我执行了吗");
+}
+```
+
+### 异常(finally关键字的面试题)
 * A:面试题1
 	* final,finally和finalize的区别
 * B:面试题2
@@ -166,7 +261,7 @@ C:异常的继承体系
 	* 要删除一个文件夹，请注意该文件夹内不能包含文件或者文件夹
 
 
-###19.17_File类(File类的判断功能)
+### File类(File类的判断功能)
 * A:判断功能
 	* public boolean isDirectory():判断是否是目录
 	* public boolean isFile():判断是否是文件
@@ -177,7 +272,7 @@ C:异常的继承体系
 * B:案例演示
 	* File类的判断功能
 
-###19.18_File类(File类的获取功能)
+### File类(File类的获取功能)
 * A:获取功能
 	* public String getAbsolutePath()：获取绝对路径
 	* public String getPath():获取路径
@@ -189,11 +284,11 @@ C:异常的继承体系
 * B:案例演示
 	* File类的获取功能
 
-###19.19_File类(输出指定目录下指定后缀的文件名)
+### File类(输出指定目录下指定后缀的文件名)
 * A:案例演示
 	* 需求：判断E盘目录下是否有后缀名为.jpg的文件，如果有，就输出该文件名称
 
-###19.20_File类(文件名称过滤器的概述及使用)
+### File类(文件名称过滤器的概述及使用)
 * A:文件名称过滤器的概述
 	* public String[] list(FilenameFilter filter)
 	* public File[] listFiles(FileFilter filter)
